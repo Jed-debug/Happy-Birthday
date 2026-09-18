@@ -1,0 +1,1796 @@
+/* =========================================================
+   GENERAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+
+  color: #392d3b;
+
+  background:
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(255, 218, 235, .8),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(224, 211, 255, .65),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      180deg,
+      #fff8fc 0%,
+      #fff4f8 35%,
+      #f8f2ff 70%,
+      #fff8fb 100%
+    );
+
+  overflow-x: hidden;
+}
+
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.8) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  opacity: .45;
+
+  z-index: 0;
+}
+
+
+h1,
+h2,
+p,
+blockquote {
+  margin-top: 0;
+}
+
+
+h1,
+h2,
+blockquote {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+}
+
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  position: relative;
+
+  padding: 40px 24px;
+
+  z-index: 1;
+}
+
+
+.hero-content {
+
+  max-width: 800px;
+
+  animation:
+    heroAppear 1.5s ease forwards;
+}
+
+
+.crown {
+
+  font-size: 55px;
+
+  color: #c49a55;
+
+  margin-bottom: 15px;
+
+  text-shadow:
+    0 3px 15px
+    rgba(196,154,85,.3);
+}
+
+
+.eyebrow {
+
+  text-transform: uppercase;
+
+  letter-spacing: 4px;
+
+  font-size: 12px;
+
+  color: #a66b89;
+
+  margin-bottom: 20px;
+}
+
+
+.hero h1 {
+
+  font-size:
+    clamp(4rem, 10vw, 7rem);
+
+  line-height: .9;
+
+  font-weight: 500;
+
+  color: #5d4059;
+
+  margin-bottom: 30px;
+}
+
+
+.hero h1 span {
+
+  display: block;
+
+  color: #bd6d91;
+
+  font-style: italic;
+}
+
+
+.hero-subtitle {
+
+  max-width: 580px;
+
+  margin: auto;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  color: #6c5b69;
+}
+
+
+.scroll-indicator {
+
+  margin-top: 80px;
+
+  color: #9d778d;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+
+.arrow {
+
+  font-size: 28px;
+
+  margin-top: 10px;
+
+  animation:
+    bounce 1.8s infinite;
+}
+
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+main {
+
+  position: relative;
+
+  z-index: 1;
+}
+
+
+.message-section {
+
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  padding: 150px 25px;
+
+  text-align: center;
+}
+
+
+.section-number {
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  color: #c084a3;
+
+  display: block;
+
+  margin-bottom: 20px;
+}
+
+
+.message-section h2,
+.princess-section h2,
+.cat-card h2 {
+
+  font-size:
+    clamp(2.8rem, 7vw, 4.5rem);
+
+  line-height: 1;
+
+  font-weight: 500;
+
+  color: #5c4057;
+
+  margin-bottom: 40px;
+}
+
+
+.message-section p {
+
+  font-size: 17px;
+
+  line-height: 2;
+
+  color: #685968;
+
+  margin-bottom: 25px;
+}
+
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.quote-section {
+
+  min-height: 55vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  padding: 80px 25px;
+
+  text-align: center;
+}
+
+
+.quote-mark {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 110px;
+
+  color: #d8a1ba;
+
+  line-height: .5;
+}
+
+
+blockquote {
+
+  max-width: 800px;
+
+  font-size:
+    clamp(2rem, 5vw, 3.5rem);
+
+  line-height: 1.2;
+
+  font-style: italic;
+
+  color: #714c67;
+
+  margin: 20px 0;
+}
+
+
+.tiny-heart {
+
+  font-size: 30px;
+
+  color: #c7809f;
+}
+
+
+
+/* =========================================================
+   GOALS
+========================================================= */
+
+.goals {
+
+  padding-top: 180px;
+}
+
+
+.goal-card {
+
+  margin: 60px auto 0;
+
+  max-width: 500px;
+
+  padding: 35px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255,255,255,.65);
+
+  border:
+    1px solid
+    rgba(190,150,180,.2);
+
+  box-shadow:
+    0 20px 60px
+    rgba(110,75,110,.08);
+
+  backdrop-filter:
+    blur(10px);
+}
+
+
+.goal-icon {
+
+  font-size: 35px;
+
+  color: #c59a58;
+
+  margin-bottom: 15px;
+}
+
+
+.goal-card p {
+
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 30px;
+
+  color: #674b61;
+}
+
+
+.goal-card span {
+
+  margin: 0 15px;
+}
+
+
+.image-gallery {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  max-width: 650px;
+
+  margin: 45px auto 0;
+}
+
+
+.image-card {
+
+  min-width: 0;
+
+  margin: 0;
+
+  padding: 10px 10px 14px;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.72);
+
+  box-shadow: 0 15px 35px rgba(110,75,110,.1);
+
+  transform: rotate(-2deg);
+}
+
+
+.image-card:nth-child(2) {
+
+  transform: rotate(2deg);
+}
+
+
+.image-card:nth-child(3) {
+
+  transform: rotate(-1deg);
+}
+
+
+.image-card img {
+
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 1;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+
+  background: #f5e8f1;
+}
+
+
+.image-card figcaption {
+
+  padding-top: 10px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 24px;
+
+  color: #674b61;
+}
+
+
+
+/* =========================================================
+   CAT SECTION
+========================================================= */
+
+.cat-section {
+
+  min-height: 80vh;
+
+  padding: 150px 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.cat-card {
+
+  max-width: 650px;
+
+  text-align: center;
+
+  padding: 70px 45px;
+
+  border-radius: 40px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.8),
+      rgba(250,238,255,.7)
+    );
+
+  box-shadow:
+    0 30px 80px
+    rgba(104,69,100,.12);
+
+  border:
+    1px solid
+    rgba(255,255,255,.8);
+}
+
+
+.paw {
+
+  font-size: 45px;
+
+  margin-bottom: 20px;
+}
+
+
+.cat-card p {
+
+  font-size: 17px;
+
+  line-height: 1.9;
+
+  color: #6c5b69;
+}
+
+
+.cat-note {
+
+  font-style: italic;
+
+  color: #9b6f87 !important;
+}
+
+
+.cat-hearts {
+
+  margin-top: 35px;
+
+  font-size: 20px;
+
+  color: #c17c9d;
+}
+
+
+
+/* =========================================================
+   PRINCESS
+========================================================= */
+
+.princess-section {
+
+  min-height: 100vh;
+
+  padding: 180px 25px;
+
+  max-width: 760px;
+
+  margin: auto;
+
+  text-align: center;
+
+  position: relative;
+}
+
+
+.crown-large {
+
+  font-size: 80px;
+
+  color: #c7a05c;
+
+  margin-bottom: 25px;
+
+  text-shadow:
+    0 5px 30px
+    rgba(190,150,80,.25);
+}
+
+
+.princess-section p {
+
+  font-size: 17px;
+
+  line-height: 2;
+
+  color: #69596a;
+
+  margin-bottom: 25px;
+}
+
+
+
+/* =========================================================
+   FINAL CARD
+========================================================= */
+
+.final-section {
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 100px 25px;
+}
+
+
+.final-card {
+
+  max-width: 700px;
+
+  padding: 75px 50px;
+
+  text-align: center;
+
+  background:
+    rgba(255,255,255,.78);
+
+  border-radius: 40px;
+
+  box-shadow:
+    0 30px 100px
+    rgba(100,65,95,.12);
+
+  border:
+    1px solid
+    rgba(255,255,255,.9);
+}
+
+
+.stars-small {
+
+  color: #c9a35f;
+
+  font-size: 22px;
+
+  letter-spacing: 12px;
+
+  margin-bottom: 35px;
+}
+
+
+.final-card h2 {
+
+  font-size:
+    clamp(3rem, 7vw, 4.5rem);
+
+  font-weight: 500;
+
+  color: #65465e;
+}
+
+
+.final-card p {
+
+  font-size: 17px;
+
+  line-height: 1.9;
+
+  color: #6b5b69;
+
+  margin-bottom: 22px;
+}
+
+
+.special-line {
+
+  color: #bd7092 !important;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 27px !important;
+
+  font-style: italic;
+}
+
+
+.divider {
+
+  margin: 40px 0 25px;
+
+  color: #c486a1;
+
+  font-size: 28px;
+}
+
+
+.birthday-wish {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 40px !important;
+
+  color: #b8668b !important;
+
+  font-weight: 600;
+}
+
+
+.signature {
+
+  font-size: 13px !important;
+
+  font-style: italic;
+
+  color: #91798b !important;
+}
+
+
+
+/* =========================================================
+   ENDING
+========================================================= */
+
+.ending {
+
+  min-height: 70vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 100px 25px;
+}
+
+
+.ending-content {
+
+  max-width: 700px;
+}
+
+
+.ending h2 {
+
+  font-size:
+    clamp(3rem, 8vw, 5rem);
+
+  font-weight: 500;
+
+  color: #694b63;
+
+  line-height: 1;
+}
+
+
+.ending p {
+
+  color: #917487;
+
+  line-height: 1.8;
+}
+
+
+.final-gif {
+
+  margin-top: 50px;
+
+  width: 150px;
+
+  max-width: 70vw;
+
+  opacity: 0;
+
+  transform: scale(.85);
+
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+
+.final-gif.visible {
+
+  opacity: 1;
+
+  transform: scale(1);
+}
+
+
+
+/* =========================================================
+   PARACHUTING CAT
+========================================================= */
+
+/*
+   IMPORTANT:
+
+   The cat stays on the LEFT.
+
+   JavaScript controls only the TOP position.
+*/
+
+.cat {
+
+  position: fixed;
+
+  left: 14%;
+
+  top: 24%;
+
+  width: 230px;
+
+  z-index: 100;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  /*
+    Center the cat around its position.
+  */
+
+  transform:
+    translate(-50%, -50%);
+
+  transition:
+    opacity .5s ease;
+}
+
+
+.cat img {
+
+  width: 100%;
+
+  display: block;
+
+  filter:
+    drop-shadow(
+      0 15px 20px
+      rgba(80,50,70,.18)
+    );
+
+  animation:
+    catFloat 3s ease-in-out infinite;
+}
+
+
+.cat-rope {
+
+  position: absolute;
+
+  top: -45px;
+
+  left: 50%;
+
+  width: 1px;
+
+  height: 50px;
+
+  background:
+    rgba(150,120,140,.35);
+}
+
+
+.cat-sparkle {
+
+  position: absolute;
+
+  color: #c69d5c;
+
+  animation:
+    sparkleFloat 2s ease-in-out infinite;
+}
+
+
+.sparkle-1 {
+
+  top: 20%;
+
+  left: -25px;
+}
+
+
+.sparkle-2 {
+
+  top: 45%;
+
+  right: -30px;
+
+  animation-delay: .7s;
+}
+
+
+.sparkle-3 {
+
+  bottom: 15%;
+
+  left: -35px;
+
+  animation-delay: 1.2s;
+}
+
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal {
+
+  opacity: 0;
+
+  transform:
+    translateY(50px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+
+.reveal.visible {
+
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes heroAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(25px);
+
+  }
+
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+@keyframes bounce {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0);
+
+  }
+
+
+  50% {
+
+    transform:
+      translateY(10px);
+
+  }
+
+}
+
+
+@keyframes catFloat {
+
+  0%,
+  100% {
+
+    transform:
+      rotate(-3deg);
+
+  }
+
+
+  50% {
+
+    transform:
+      rotate(3deg);
+
+  }
+
+}
+
+
+@keyframes sparkleFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      scale(1);
+
+    opacity: .5;
+
+  }
+
+
+  50% {
+
+    transform:
+      translateY(-10px)
+      scale(1.2);
+
+    opacity: 1;
+
+  }
+
+}
+
+
+@keyframes heartbeat {
+
+  0%,
+  100% {
+
+    transform:
+      scale(1);
+
+  }
+
+
+  15% {
+
+    transform:
+      scale(1.15);
+
+  }
+
+
+  30% {
+
+    transform:
+      scale(1);
+
+  }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+
+  /* -----------------------------------------------
+     HERO
+  ------------------------------------------------ */
+
+  .hero {
+
+    padding:
+      30px 20px;
+  }
+
+
+  .hero-content {
+
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+
+  .crown {
+
+    font-size: 45px;
+
+    margin-bottom: 12px;
+  }
+
+
+  .eyebrow {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+  }
+
+
+  /*
+    Slightly smaller than before.
+
+    This prevents the title from feeling
+    cramped on a phone.
+  */
+
+  .hero h1 {
+
+    font-size:
+      clamp(3.3rem, 14vw, 4rem);
+
+    line-height: .88;
+
+    margin-bottom: 28px;
+  }
+
+
+  .hero-subtitle {
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    max-width: 340px;
+  }
+
+
+  .scroll-indicator {
+
+    margin-top: 65px;
+  }
+
+
+
+  /* -----------------------------------------------
+     MESSAGE
+  ------------------------------------------------ */
+
+  .message-section {
+
+    padding:
+      120px 25px;
+  }
+
+
+  .message-section h2,
+  .princess-section h2,
+  .cat-card h2 {
+
+    font-size:
+      3rem;
+  }
+
+
+  .message-section p,
+  .princess-section p,
+  .cat-card p,
+  .final-card p {
+
+    font-size: 15px;
+  }
+
+
+
+  /* -----------------------------------------------
+     QUOTE
+  ------------------------------------------------ */
+
+  .quote-section {
+
+    min-height: 60vh;
+
+    padding:
+      80px 25px;
+  }
+
+
+  .quote-mark {
+
+    font-size: 85px;
+  }
+
+
+  blockquote {
+
+    font-size:
+      clamp(2rem, 9vw, 3rem);
+  }
+
+
+
+  /* -----------------------------------------------
+     GOALS
+  ------------------------------------------------ */
+
+  .goals {
+
+    padding-top: 130px;
+  }
+
+
+  .goal-card {
+
+    padding: 30px 20px;
+  }
+
+
+  .goal-card p {
+
+    font-size: 27px;
+  }
+
+
+  .image-gallery {
+
+    gap: 10px;
+  }
+
+
+  .image-card {
+
+    padding: 7px 7px 11px;
+  }
+
+
+  .image-card figcaption {
+
+    font-size: 20px;
+  }
+
+
+
+  /* -----------------------------------------------
+     CAT SECTION
+  ------------------------------------------------ */
+
+  .cat-section {
+
+    min-height: 70vh;
+
+    padding:
+      120px 20px;
+  }
+
+
+  .cat-card {
+
+    padding:
+      55px 25px;
+  }
+
+
+
+  /* -----------------------------------------------
+     PRINCESS
+  ------------------------------------------------ */
+
+  .princess-section {
+
+    padding:
+      150px 25px;
+  }
+
+
+  .crown-large {
+
+    font-size: 65px;
+  }
+
+
+
+  /* -----------------------------------------------
+     FINAL CARD
+  ------------------------------------------------ */
+
+  .final-section {
+
+    padding:
+      80px 20px;
+  }
+
+
+  .final-card {
+
+    padding:
+      55px 25px;
+
+    border-radius: 30px;
+  }
+
+
+  .birthday-wish {
+
+    font-size:
+      34px !important;
+  }
+
+
+
+  /* -----------------------------------------------
+     PARACHUTING CAT — MOBILE
+  ------------------------------------------------ */
+
+  .cat {
+
+    /*
+      Keep the cat clearly on the LEFT.
+    */
+
+    left: 14%;
+
+
+    /*
+      Start ABOVE the birthday title.
+
+      This is the important fix for the
+      screenshot you showed.
+    */
+
+    top: 24%;
+
+
+    /*
+      Smaller cat on phones so it doesn't
+      cover the text.
+    */
+
+    width: 130px;
+  }
+
+
+  .cat-rope {
+
+    top: -25px;
+
+    height: 30px;
+  }
+
+
+  .sparkle-1 {
+
+    left: -15px;
+  }
+
+
+  .sparkle-2 {
+
+    right: -18px;
+  }
+
+
+  .sparkle-3 {
+
+    left: -20px;
+  }
+
+}
+
+/* =========================================================
+   BIRTHDAY OPENING
+========================================================= */
+
+#birthday-intro {
+
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 99999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 30px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #4b304d 0%,
+      #241b2c 45%,
+      #120f1b 100%
+    );
+
+  color: white;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transition:
+    opacity 1.2s ease,
+    visibility 1.2s ease;
+
+}
+
+
+/* =========================================================
+   INTRO CONTENT
+========================================================= */
+
+.intro-content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  max-width: 800px;
+
+}
+
+
+/* =========================================================
+   SPARKLES
+========================================================= */
+
+.intro-sparkles {
+
+  font-size: 25px;
+
+  letter-spacing: 18px;
+
+  color: #e8c987;
+
+  opacity: 0;
+
+  animation:
+    introSparklesAppear 1.3s ease forwards;
+
+  animation-delay: .2s;
+
+}
+
+
+/* =========================================================
+   CROWN
+========================================================= */
+
+.intro-crown {
+
+  font-size: 75px;
+
+  color: #e8c987;
+
+  margin: 15px 0;
+
+  opacity: 0;
+
+  text-shadow:
+    0 0 20px rgba(232,201,135,.6),
+    0 0 50px rgba(232,201,135,.3);
+
+  animation:
+    introCrownAppear 1.3s ease forwards;
+
+  animation-delay: .5s;
+
+}
+
+
+/* =========================================================
+   HAPPY BIRTHDAY
+========================================================= */
+
+.intro-title {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(3.5rem, 9vw, 7rem);
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  color: #fff5fb;
+
+  margin: 10px 0;
+
+  opacity: 0;
+
+  animation:
+    introTitleAppear 1.3s ease forwards;
+
+  animation-delay: .9s;
+
+}
+
+
+/* =========================================================
+   DISNEY PRINCESS
+========================================================= */
+
+.intro-name {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(2rem, 5vw, 3.5rem);
+
+  font-style: italic;
+
+  font-weight: 500;
+
+  color: #e8b5d0;
+
+  margin: 10px 0 20px;
+
+  opacity: 0;
+
+  animation:
+    introTitleAppear 1.3s ease forwards;
+
+  animation-delay: 1.3s;
+
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.intro-subtitle {
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 13px;
+
+  letter-spacing: 2px;
+
+  color: #d6c4d5;
+
+  margin: 0;
+
+  opacity: 0;
+
+  animation:
+    introTitleAppear 1.3s ease forwards;
+
+  animation-delay: 1.7s;
+
+}
+
+
+/* =========================================================
+   HEART
+========================================================= */
+
+.intro-heart {
+
+  font-size: 40px;
+
+  color: #e8b5d0;
+
+  margin-top: 25px;
+
+  opacity: 0;
+
+  animation:
+    introHeartAppear 1.3s ease forwards;
+
+  animation-delay: 2s;
+
+}
+
+
+/* =========================================================
+   TAP ANYWHERE
+========================================================= */
+
+.intro-tap {
+
+  margin-top: 55px;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  color: rgba(255,255,255,.7);
+
+  opacity: 0;
+
+  animation:
+    introTapAppear 1.5s ease forwards,
+    introTapPulse 2s ease-in-out infinite;
+
+  animation-delay: 2.5s, 4s;
+
+}
+
+
+/* =========================================================
+   EXIT ANIMATION
+========================================================= */
+
+#birthday-intro.hide-intro {
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes introSparklesAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform: scale(.5);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+  }
+
+}
+
+
+@keyframes introCrownAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(-30px)
+      scale(.7);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+}
+
+
+@keyframes introTitleAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(30px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+@keyframes introHeartAppear {
+
+  0% {
+
+    opacity: 0;
+
+    transform: scale(.5);
+
+  }
+
+  70% {
+
+    opacity: 1;
+
+    transform: scale(1.2);
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+  }
+
+}
+
+
+@keyframes introTapAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(10px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+@keyframes introTapPulse {
+
+  0%,
+  100% {
+
+    opacity: .5;
+
+  }
+
+  50% {
+
+    opacity: 1;
+
+  }
+
+}
