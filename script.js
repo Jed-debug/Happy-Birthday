@@ -95,17 +95,20 @@ if (messageForm) {
 const birthdayAudio =
   document.getElementById("birthday-audio");
 
-if (
-  birthdayAudio &&
-  sessionStorage.getItem("birthday-audio-start") === "true"
-) {
+function startBirthdayAudio() {
+
+  if (!birthdayAudio) return;
 
   birthdayAudio.play().catch(function () {
   });
 
-  sessionStorage.removeItem("birthday-audio-start");
+  document.removeEventListener("pointerdown", startBirthdayAudio);
+  document.removeEventListener("keydown", startBirthdayAudio);
 
 }
+
+document.addEventListener("pointerdown", startBirthdayAudio);
+document.addEventListener("keydown", startBirthdayAudio);
 
 
 /* =========================================================
@@ -375,6 +378,24 @@ const observer =
           entry.target.classList.add(
             "visible"
           );
+
+          if (entry.target === endingContent) {
+
+            finalGif.classList.add("visible");
+
+            if (finalQuestion) {
+
+              finalQuestion.classList.add("visible");
+
+            }
+
+            if (messageForm) {
+
+              messageForm.classList.add("visible");
+
+            }
+
+          }
 
         }
 
