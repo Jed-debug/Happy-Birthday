@@ -799,9 +799,89 @@ blockquote {
 }
 
 
-.final-gif {
+.final-gif-scene {
+
+  position: relative;
+
+  display: inline-block;
 
   margin-top: 50px;
+}
+
+
+.final-speech-bubble {
+
+  position: absolute;
+
+  top: -30px;
+
+  right: -90px;
+
+  z-index: 1;
+
+  padding: 13px 20px;
+
+  border: 2px solid #e4a8c1;
+
+  border-radius: 50%;
+
+  background: #fff8fc;
+
+  color: #8e5874;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 20px;
+
+  font-style: italic;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  box-shadow: 0 5px 14px rgba(80,50,70,.12);
+
+  transform: rotate(5deg) scale(1);
+
+  transition:
+    opacity .35s ease,
+    transform .35s ease;
+}
+
+
+.final-speech-bubble.is-changing {
+
+  opacity: 0;
+
+  transform: rotate(5deg) scale(.85);
+}
+
+
+.final-speech-bubble::after {
+
+  content: "";
+
+  position: absolute;
+
+  bottom: -12px;
+
+  left: 24px;
+
+  width: 16px;
+
+  height: 16px;
+
+  border-right: 2px solid #e4a8c1;
+
+  border-bottom: 2px solid #e4a8c1;
+
+  background: #fff8fc;
+
+  transform: rotate(35deg) skew(-10deg, -10deg);
+}
+
+
+.final-gif {
 
   width: 150px;
 
@@ -822,6 +902,14 @@ blockquote {
   opacity: 1;
 
   transform: scale(1);
+}
+
+
+.final-gif.is-changing {
+
+  opacity: 0;
+
+  transform: scale(.85) rotate(-4deg);
 }
 
 
@@ -854,6 +942,14 @@ blockquote {
 
   transform: scale(1);
 
+
+
+.final-question.is-changing {
+
+  opacity: 0;
+
+  transform: scale(.85);
+}
 }
 
 
@@ -902,6 +998,18 @@ blockquote {
   font-style: italic;
 
   color: #694b63;
+
+  transition:
+    opacity .35s ease,
+    transform .35s ease;
+}
+
+
+.message-form label.is-changing {
+
+  opacity: 0;
+
+  transform: scale(.85);
 
 }
 
@@ -1339,6 +1447,16 @@ blockquote {
 ========================================================= */
 
 @media (max-width: 600px) {
+
+
+  .final-speech-bubble {
+
+    top: -24px;
+
+    right: -58px;
+
+    font-size: 18px;
+  }
 
 
   .birthday-modal-gif {

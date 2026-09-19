@@ -3,8 +3,14 @@ const cat = document.getElementById("cat");
 const finalGif =
   document.querySelector(".final-gif");
 
+const finalSpeechBubble =
+  document.querySelector(".final-speech-bubble");
+
 const finalQuestion =
   document.querySelector(".final-question");
+
+const finalMessageLabel =
+  document.querySelector(".message-form label");
 
 const endingContent =
   document.querySelector(".ending-content");
@@ -71,6 +77,48 @@ if (messageForm) {
         messageStatus.className = "message-status success";
 
       }
+
+      finalGif?.classList.add("is-changing");
+      finalSpeechBubble?.classList.add("is-changing");
+      finalQuestion?.classList.add("is-changing");
+      finalMessageLabel?.classList.add("is-changing");
+
+      setTimeout(function () {
+
+        if (finalGif) {
+
+          finalGif.src = "images/finalcat.png";
+
+        }
+
+        if (finalSpeechBubble) {
+
+          finalSpeechBubble.textContent = "THANK YOU";
+
+        }
+
+        if (finalQuestion) {
+
+          finalQuestion.textContent = "Gapri is free! You saved him.";
+
+        }
+
+        if (finalMessageLabel) {
+
+          finalMessageLabel.textContent = "Thank you for helping Gapri!";
+
+        }
+
+        requestAnimationFrame(function () {
+
+          finalGif?.classList.remove("is-changing");
+          finalSpeechBubble?.classList.remove("is-changing");
+          finalQuestion?.classList.remove("is-changing");
+          finalMessageLabel?.classList.remove("is-changing");
+
+        });
+
+      }, 350);
 
     }
 
