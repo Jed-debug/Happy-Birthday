@@ -615,10 +615,20 @@
   </main>
 
 
+  <audio
+    id="birthday-audio"
+    src="Taylor Swift - You’re On Your Own, Kid (Lyrics).mp3"
+    preload="auto"
+  ></audio>
+
+
   <script>
 
     const intro =
       document.getElementById("intro");
+
+    const birthdayAudio =
+      document.getElementById("birthday-audio");
 
 
     function enterWebsite() {
@@ -635,6 +645,15 @@
         return;
 
       }
+
+
+      sessionStorage.setItem(
+        "birthday-audio-start",
+        "true"
+      );
+
+      birthdayAudio.play().catch(function () {
+      });
 
 
       /*

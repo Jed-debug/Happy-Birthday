@@ -3,6 +3,59 @@ const cat = document.getElementById("cat");
 const finalGif =
   document.querySelector(".final-gif");
 
+const finalQuestion =
+  document.querySelector(".final-question");
+
+const endingContent =
+  document.querySelector(".ending-content");
+
+const messageForm =
+  document.getElementById("message-form");
+
+const messageRecipient =
+  "jedtwitch18@gmail.com";
+
+if (messageForm) {
+
+  messageForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const message =
+      document.getElementById("visitor-message").value.trim();
+
+    const subject =
+      "A message from your birthday surprise";
+
+    const mailtoUrl =
+      "mailto:" +
+      messageRecipient +
+      "?subject=" +
+      encodeURIComponent(subject) +
+      "&body=" +
+      encodeURIComponent(message);
+
+    window.location.href = mailtoUrl;
+
+  });
+
+}
+
+const birthdayAudio =
+  document.getElementById("birthday-audio");
+
+if (
+  birthdayAudio &&
+  sessionStorage.getItem("birthday-audio-start") === "true"
+) {
+
+  birthdayAudio.play().catch(function () {
+  });
+
+  sessionStorage.removeItem("birthday-audio-start");
+
+}
+
 
 /* =========================================================
    CAT STATE
@@ -184,6 +237,24 @@ function animateCat() {
   ) {
 
     finalGif.classList.add("visible");
+
+    if (endingContent) {
+
+      endingContent.classList.add("visible");
+
+    }
+
+    if (finalQuestion) {
+
+      finalQuestion.classList.add("visible");
+
+    }
+
+    if (messageForm) {
+
+      messageForm.classList.add("visible");
+
+    }
 
   }
 
