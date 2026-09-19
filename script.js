@@ -318,6 +318,9 @@ requestAnimationFrame(
 const birthdayIntro =
   document.getElementById("birthday-intro");
 
+const birthdayIntroButton =
+  document.getElementById("birthday-intro-button");
+
 
 /*
   LOCK PAGE SCROLLING
@@ -395,9 +398,9 @@ function enterWebsite() {
    CLICK / TAP
 ========================================================= */
 
-if (birthdayIntro) {
+if (birthdayIntroButton) {
 
-  birthdayIntro.addEventListener(
+  birthdayIntroButton.addEventListener(
     "click",
     enterWebsite
   );
