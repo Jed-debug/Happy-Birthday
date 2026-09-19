@@ -964,6 +964,42 @@ blockquote {
 }
 
 
+.message-form button:disabled {
+
+  opacity: .6;
+
+  cursor: wait;
+
+}
+
+
+.message-status {
+
+  min-height: 1.5em;
+
+  margin: 0;
+
+  color: #694b63;
+
+  font: .9rem/1.5 "Inter", sans-serif;
+
+}
+
+
+.message-status.success {
+
+  color: #47734f;
+
+}
+
+
+.message-status.error {
+
+  color: #a04444;
+
+}
+
+
 
 /* =========================================================
    PARACHUTING CAT

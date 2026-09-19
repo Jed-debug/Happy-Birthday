@@ -12,30 +12,81 @@ const endingContent =
 const messageForm =
   document.getElementById("message-form");
 
-const messageRecipient =
-  "jedtwitch18@gmail.com";
+const formspreeEndpoint =
+  "https://formspree.io/f/YOUR_FORM_ID";
+
+const messageStatus =
+  document.getElementById("message-status");
 
 if (messageForm) {
 
-  messageForm.addEventListener("submit", function (event) {
+  messageForm.addEventListener("submit", async function (event) {
 
     event.preventDefault();
 
-    const message =
-      document.getElementById("visitor-message").value.trim();
+    const submitButton =
+      messageForm.querySelector("button[type='submit']");
 
-    const subject =
-      "A message from your birthday surprise";
+    submitButton.disabled = true;
 
-    const mailtoUrl =
-      "mailto:" +
-      messageRecipient +
-      "?subject=" +
-      encodeURIComponent(subject) +
-      "&body=" +
-      encodeURIComponent(message);
+    if (messageStatus) {
 
-    window.location.href = mailtoUrl;
+      messageStatus.textContent = "Sending...";
+      messageStatus.className = "message-status";
+
+    }
+
+    try {
+
+      const response = await fetch(formspreeEndpoint, {
+
+        method: "POST",
+
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+          message: document
+            .getElementById("visitor-message")
+            .value
+            .trim(),
+          subject: "A message from your birthday surprise"
+        })
+
+      });
+
+      if (!response.ok) {
+
+        throw new Error("Message could not be sent");
+
+      }
+
+      messageForm.reset();
+
+      if (messageStatus) {
+
+        messageStatus.textContent = "Message sent successfully.";
+        messageStatus.className = "message-status success";
+
+      }
+
+    }
+
+    catch (error) {
+
+      if (messageStatus) {
+
+        messageStatus.textContent =
+          "Message could not be sent. Please try again.";
+        messageStatus.className = "message-status error";
+
+      }
+
+    }
+
+    submitButton.disabled = false;
 
   });
 
