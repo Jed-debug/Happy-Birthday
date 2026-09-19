@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>For My Disney Princess ✨</title>
+
+
+  <!-- Google Fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html,
+    body {
+
+      margin: 0;
+
+      width: 100%;
+      height: 100%;
+
+      overflow: hidden;
+
+    }
+
+
+    body {
+
+      font-family: "Inter", sans-serif;
+
+      background:
+        radial-gradient(
+          circle at center,
+          #4b304d 0%,
+          #241b2c 48%,
+          #120f1b 100%
+        );
+
+      color: white;
+
+      cursor: pointer;
+
+      user-select: none;
+
+      -webkit-user-select: none;
+
+    }
+
+
+    /* =====================================================
+       INTRO CONTAINER
+    ===================================================== */
+
+    .intro {
+
+      position: fixed;
+
+      inset: 0;
+
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      overflow: hidden;
+
+    }
+
+
+    /* =====================================================
+       BACKGROUND GLOW
+    ===================================================== */
+
+    .intro::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(214, 166, 205, .18),
+          transparent 70%
+        );
+
+      animation: glow 4s ease-in-out infinite;
+
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ===================================================== */
+
+    .intro-content {
+
+      position: relative;
+
+      z-index: 2;
+
+      width: 100%;
+
+      padding: 30px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+    }
+
+
+    /* =====================================================
+       SPARKLES
+    ===================================================== */
+
+    .sparkles {
+
+      font-size: 25px;
+
+      letter-spacing: 18px;
+
+      color: #e8c987;
+
+      opacity: 0;
+
+      animation:
+        sparkleAppear 1.2s ease forwards;
+
+      animation-delay: .2s;
+
+    }
+
+
+    /* =====================================================
+       CROWN
+    ===================================================== */
+
+    .crown {
+
+      font-size: 75px;
+
+      color: #e8c987;
+
+      margin: 15px 0;
+
+      opacity: 0;
+
+      text-shadow:
+        0 0 20px rgba(232,201,135,.6),
+        0 0 50px rgba(232,201,135,.3);
+
+      animation:
+        crownAppear 1.3s ease forwards;
+
+      animation-delay: .5s;
+
+    }
+
+
+    /* =====================================================
+       HAPPY BIRTHDAY
+    ===================================================== */
+
+    .title {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(3.5rem, 10vw, 7rem);
+
+      line-height: .9;
+
+      font-weight: 500;
+
+      margin: 10px 0;
+
+      color: #fff5fb;
+
+      opacity: 0;
+
+      animation:
+        titleAppear 1.4s ease forwards;
+
+      animation-delay: .9s;
+
+    }
+
+
+    /* =====================================================
+       DISNEY PRINCESS
+    ===================================================== */
+
+    .name {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(2rem, 6vw, 3.5rem);
+
+      font-style: italic;
+
+      font-weight: 500;
+
+      margin: 15px 0;
+
+      color: #e8b5d0;
+
+      opacity: 0;
+
+      animation:
+        titleAppear 1.4s ease forwards;
+
+      animation-delay: 1.4s;
+
+    }
+
+
+    /* =====================================================
+       MESSAGE
+    ===================================================== */
+
+    .message {
+
+      font-size: 13px;
+
+      letter-spacing: 2px;
+
+      color: #d6c4d5;
+
+      margin-top: 5px;
+
+      opacity: 0;
+
+      animation:
+        titleAppear 1.3s ease forwards;
+
+      animation-delay: 1.9s;
+
+    }
+
+
+    /* =====================================================
+       HEART
+    ===================================================== */
+
+    .heart {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 42px;
+
+      color: #e8b5d0;
+
+      margin-top: 20px;
+
+      opacity: 0;
+
+      animation:
+        heartAppear 1.2s ease forwards;
+
+      animation-delay: 2.3s;
+
+    }
+
+
+    /* =====================================================
+       TAP
+    ===================================================== */
+
+    .tap {
+
+      margin-top: 50px;
+
+      font-size: 11px;
+
+      letter-spacing: 4px;
+
+      color: rgba(255,255,255,.7);
+
+      opacity: 0;
+
+      animation:
+        tapAppear 1.3s ease forwards,
+        tapPulse 2s ease-in-out infinite;
+
+      animation-delay: 2.8s, 4.1s;
+
+    }
+
+
+    /* =====================================================
+       ANIMATIONS
+    ===================================================== */
+
+    @keyframes sparkleAppear {
+
+      from {
+
+        opacity: 0;
+
+        transform: scale(.5);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+      }
+
+    }
+
+
+    @keyframes crownAppear {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(-30px)
+          scale(.7);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+
+      }
+
+    }
+
+
+    @keyframes titleAppear {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(30px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes heartAppear {
+
+      0% {
+
+        opacity: 0;
+
+        transform: scale(.5);
+
+      }
+
+      70% {
+
+        opacity: 1;
+
+        transform: scale(1.2);
+
+      }
+
+      100% {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+      }
+
+    }
+
+
+    @keyframes tapAppear {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(10px);
+
+      }
+
+      to {
+
+        opacity: .7;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes tapPulse {
+
+      0%,
+      100% {
+
+        opacity: .4;
+
+      }
+
+      50% {
+
+        opacity: 1;
+
+      }
+
+    }
+
+
+    @keyframes glow {
+
+      0%,
+      100% {
+
+        transform: scale(1);
+
+        opacity: .6;
+
+      }
+
+      50% {
+
+        transform: scale(1.15);
+
+        opacity: 1;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       EXIT
+    ===================================================== */
+
+    .intro.leaving {
+
+      animation:
+        leaveIntro 1s ease forwards;
+
+    }
+
+
+    @keyframes leaveIntro {
+
+      from {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+      }
+
+      to {
+
+        opacity: 0;
+
+        transform: scale(1.04);
+
+      }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 600px) {
+
+      .crown {
+
+        font-size: 55px;
+
+      }
+
+      .message {
+
+        font-size: 11px;
+
+        letter-spacing: 1.5px;
+
+      }
+
+      .tap {
+
+        margin-top: 45px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <main
+    class="intro"
+    id="intro"
+  >
+
+    <div class="intro-content">
+
+
+      <div class="sparkles">
+        ✦ ✧ ✦
+      </div>
+
+
+      <div class="crown">
+        ♕
+      </div>
+
+
+      <h1 class="title">
+        Happy Birthday
+      </h1>
+
+
+      <h2 class="name">
+        My Disney Princess ✨
+      </h2>
+
+
+      <p class="message">
+        A little magical surprise awaits you...
+      </p>
+
+
+      <div class="heart">
+        ♡
+      </div>
+
+
+      <div class="tap">
+        TAP ANYWHERE TO ENTER
+      </div>
+
+
+    </div>
+
+  </main>
+
+
+  <script>
+
+    const intro =
+      document.getElementById("intro");
+
+
+    function enterWebsite() {
+
+
+      /*
+        Prevent multiple taps/clicks.
+      */
+
+      if (
+        intro.classList.contains("leaving")
+      ) {
+
+        return;
+
+      }
+
+
+      /*
+        Play the exit animation.
+      */
+
+      intro.classList.add("leaving");
+
+
+      /*
+        Wait for the animation to finish,
+        then open the actual birthday page.
+      */
+
+      setTimeout(function () {
+
+        window.location.href =
+          "birthday.html";
+
+      }, 1000);
+
+    }
+
+
+    /*
+      Desktop click
+      + mobile tap
+    */
+
+    intro.addEventListener(
+      "click",
+      enterWebsite
+    );
+
+
+    /*
+      Also support touchscreen devices
+      immediately.
+    */
+
+    intro.addEventListener(
+      "touchend",
+      function (event) {
+
+        event.preventDefault();
+
+        enterWebsite();
+
+      },
+      {
+        passive: false
+      }
+    );
+
+  </script>
+
+
+</body>
+
+</html>
+
