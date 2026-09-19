@@ -870,7 +870,7 @@ blockquote {
 
   position: absolute;
 
-  bottom: -30px;
+  bottom: -25px;
 
   left: 15%;
 
@@ -903,6 +903,7 @@ blockquote {
 
   box-shadow:
     0 4px 10px rgba(80,50,70,.18);
+
 }
 
 
